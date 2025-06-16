@@ -1,7 +1,8 @@
 @extends('layouts/base')
 @section('title', 'Login')
 @section('content')
-<div class="w-1/3 mx-auto mt-52 relative items-center rounded-lg border-b-pink-950">
+    <div class="min-h-screen flex items-center justify-center relative bg-gradient-to-tr from-violet-200 to-white">
+        <div class="w-1/3 relative items-center rounded-lg border-b-pink-950">
 
     <img
         src="{{ asset('/account-login.svg') }}"
@@ -16,11 +17,11 @@
             <h1 class=" text text-center  ">Welcome back ! </h1>
             <label class="font-semibold">Email :</label>
             <input type="text"
-                   placeholder="Email"
+                   placeholder="Enter your Email"
                    class=" border p-2 rounded-lg bg-transparent text-center   "/>
             <label class="font-semibold">Password :</label>
             <input type="password"
-                   placeholder="Password"
+                   placeholder="Enter your password"
                    class="border p-2 rounded-lg bg-transparent text-center "/>
         </div>
         <button
@@ -32,5 +33,5 @@
 
     </div>
 </div>
-
+    </div>
 @endsection
