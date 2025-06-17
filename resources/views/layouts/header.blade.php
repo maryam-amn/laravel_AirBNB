@@ -3,4 +3,5 @@
     <a href="http://localhost/Login" ><p> Log in </p></a>
     <a href="http://localhost/avaibleapt" ><p> Homepage </p></a>
     <a href="http://localhost/newapt"><p>Propose a new Air bnb </p></a>
+    <a href="http://localhost/editapt"><p>Edit a new Air bnb </p></a>
 </header>

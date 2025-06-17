@@ -16,7 +16,10 @@ Route::get('/avaibleapt', function () {
     return view('apprtementAvaible');
 });
 
-
 Route::get('/newapt', function () {
     return view('creationapartements');
+});
+
+Route::get('/editapt', function () {
+    return view('editapartements');
 });
