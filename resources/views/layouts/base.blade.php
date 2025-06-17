@@ -6,10 +6,7 @@
     <title>@yield('title', 'Document')</title>
     @vite('resources/css/app.css')
 </head>
-<body class="gap-4 @yield('class-body', 'doc')">
-
+<body class="gap-4  @yield('class-body', 'doc')">
 @yield('content')
-
-
 </body>
 </html>
