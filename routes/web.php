@@ -23,3 +23,6 @@ Route::get('/newapt', function () {
 Route::get('/editapt', function () {
     return view('editapartements');
 });
+Route::get('/detailapt', function () {
+    return view('detailsapartements');
+});
