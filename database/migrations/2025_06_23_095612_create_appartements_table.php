@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id('id_appartement');
             $table->timestamps();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('Rue');
-            $table->string('Ville');
-            $table->string('Pays');
-            $table->string('Descriptions');
-            $table->text('Image');
-            $table->float('Prix_par_jour/personne');
-            $table->date('Date_de_début');
-            $table->date('Date_de_fin');
+            $table->string('street');
+            $table->string('city');
+            $table->string('country');
+            $table->string('description');
+            $table->text('picture');
+            $table->float('price_per_day');
+            $table->date('start_date');
+            $table->date('end_date');
         });
     }
 

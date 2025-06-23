@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->unsignedBigInteger('appartement_id');
             $table->foreign('appartement_id')->references('id_appartement')->on('appartements');
-            $table->date('date_reservée');
-            $table->integer('nbr_de_personnes');
+            $table->date('date_reserved');
+            $table->integer('nbr_of_people');
         });
     }
 
