@@ -1,6 +1,6 @@
 @extends('layouts/base')
 @section('title', 'Welcome back !')
-@section('class-body', 'bg-gradient-to-tr from-pink-50 to-white')
+@section('class-body', 'bg-gradient-to-tr from-blue-50 to-white')
 
 @section('content')
     @include('layouts/header')
@@ -8,7 +8,7 @@
     <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
         <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 p-15 text-center">
-            The 3 most rented locations:
+            The 3 most rented locations
         </h1>
 
         <section class="flex flex-wrap gap-6 mt-5 justify-center">
