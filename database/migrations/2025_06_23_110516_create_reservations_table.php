@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('appartement_id');
             $table->foreign('appartement_id')->references('id_appartement')->on('appartements');
             $table->date('date_reservée');
-            $table->integer('nombre_de_personnes');
+            $table->integer('nbr_de_personnes');
         });
     }
 

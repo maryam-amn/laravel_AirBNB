@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('Rue');
             $table->string('Ville');
             $table->string('Pays');
-            $table->string('Description');
+            $table->string('Descriptions');
             $table->text('Image');
             $table->float('Prix_par_jour/personne');
             $table->date('Date_de_début');
