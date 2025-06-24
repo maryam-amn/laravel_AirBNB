@@ -17,10 +17,12 @@ class ReservationFactory extends Factory
      */
     public function definition(): array
     {
+        $createdAt = $this->faker->dateTimeBetween('-3 months', 'now');
+        $updatedAt = $this->faker->dateTimeBetween($createdAt, 'now');
         return [
             //
-            'created_at' => $this->faker->dateTimeBetween('-3 months', 'now'),
-            'updated_at' => $this->faker->dateTimeBetween('-3 months', 'now'),
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
             'user_id' =>  $this->faker->numberBetween(1, 10),
             'appartement_id' =>  $this->faker->numberBetween(1, 10),
             'date_reserved' => $this->faker->date(),

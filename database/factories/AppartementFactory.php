@@ -18,10 +18,14 @@ class AppartementFactory extends Factory
     {
         $startDate = $this->faker->dateTimeBetween('-3 months', 'now');
         $endDate = $this->faker->dateTimeBetween($startDate, '+2 months');
+
+        $createdAt = $this->faker->dateTimeBetween('-3 months', 'now');
+        $updatedAt = $this->faker->dateTimeBetween($createdAt, 'now');
+
         return [
             //
-            'created_at' => $this->faker->dateTimeBetween('-3 months', 'now'),
-            'updated_at' => $this->faker->dateTimeBetween('-3 months', 'now'),
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
             'user_id' => $this->faker->numberBetween(1, 10),
             'street' => $this->faker->streetAddress(),
             'city' => $this->faker->city(),
