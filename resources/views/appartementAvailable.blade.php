@@ -12,7 +12,7 @@
                 <div class="flex flex-col justify-center items-center bg-white shadow-md p-4 rounded-xl hover:shadow-lg transition">
                     <a href="http://localhost/detailapt">
                         <img
-                            class="border-2 rounded-2xl w-60 h-auto mb-2 transition-transform duration-200 hover:scale-105"
+                            class="border-2 rounded-2xl w-60 h-auto mb-2 transition-transform duration-200"
                             src="{{ asset('/img-app.jpeg') }}"
                             alt="Image {{ $i + 1 }}"
                         />
