@@ -6,8 +6,8 @@
         <nav class="hidden md:flex gap-8 text-black  font-medium">
             <a href="http://localhost/avaibleapt" class="hover:text-gray-400 transition">All available flats</a>
             <a href="http://localhost/newapt" class="hover:text-gray-400 transition">Propose a new Air bnb</a>
-            <a href="http://localhost/editapt" class="hover:text-gray-400  transition">Edit a new Air bnb</a>
-            <a href="http://localhost/detailapt" class="hover:text-gray-400  transition">Detail of a Air bnb</a>
+            <a href="http://localhost/editapt/1" class="hover:text-gray-400  transition">Edit a new Air bnb</a>
+            <a href="http://localhost/detailapt/1" class="hover:text-gray-400  transition">Detail of a Air bnb</a>
             <a href="http://localhost/Register" class="hover:text-gray-400  transition">Register</a>
             <a href="http://localhost/Login" class="hover:text-gray-400  transition">Log in</a>
         </nav>
