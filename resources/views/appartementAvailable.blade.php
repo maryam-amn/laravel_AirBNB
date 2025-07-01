@@ -19,7 +19,7 @@
                     <a href="http://localhost/detailapt/{{$appartement->id}} ">
                         <img
                             class="border-2 rounded-2xl w-60 h-auto mb-2 transition-transform duration-200 bg-violet-700"
-                            src="{{ asset('appartement/' . $appartement->picture) }}"
+                            src="{{asset('storage/' . $appartement->picture) }}"
                             alt="Image"
                             width="200"
                         />

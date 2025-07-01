@@ -1,10 +1,9 @@
 @extends('layouts/base')
 @section('title', 'Edit a Air BNB')
 @section('class-body', 'bg-gradient-to-tr from-blue-50 to-white')
-
 @section('content')
     @include('layouts.header')
-    <form method="POST" action="/updateapt/{{ $item->id }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('appartement.update', $item->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -14,6 +13,7 @@
                 <h1 class="text-2xl sm:text-4xl font-serif italic">Edit a Air bnb</h1>
 
 
+                <input type="hidden" name="user_id" value="1" />
 
                 <div class="flex flex-col gap-1.5">
                     <label for="Rue">Neighborhood:</label>
@@ -53,8 +53,7 @@
 
                     <img
                         class="border-2 border-gray-300 rounded-3xl h-auto w-full sm:w-3/4 "
-                        src="{{ asset('appartement/' . $item->picture) }}"
-                        alt="Image logement" />
+                    <img src="{{ asset('storage/' . $item->picture) }}" alt="Image logement">
                     <input
                             type="file"
                            name="picture"

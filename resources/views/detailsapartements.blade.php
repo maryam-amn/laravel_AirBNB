@@ -19,8 +19,9 @@
 
                     <img
                         class="border-2 border-gray-300 rounded-3xl h-auto w-full sm:w-3/4 mx-auto"
-                        src="{{ asset('appartement/' . $appartement->picture) }}"
-                        alt="Image logement" />
+                        src="{{ asset('storage/' . ltrim($appartement->picture, '/')) }}"
+                        alt="image-logement"
+                      >
 
                     <div class="flex flex-col gap-2 text-sm md:text-base">
                         <p><strong>Description du Logement :</strong></p>

@@ -4,10 +4,8 @@
 
 @section('content')
     @include('layouts/header')
-    @csrf
-    <form action="{{url('newapt')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('addNewApt') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
         <div class="min-h-screen flex justify-center pt-20 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
             @if ($errors->any())
