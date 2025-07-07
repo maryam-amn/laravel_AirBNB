@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AppartementRequest;
 use App\Models\Appartement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AppartementController extends Controller
 {
@@ -69,15 +70,14 @@ class AppartementController extends Controller
     {
         $validated = $request->validated();
 
-        $item = Appartement::findOrFail($appartement->id);
-        $item->fill($validated);
+        $appartement->fill($validated);
 
         if ($request->hasFile('picture')) {
-            $item->picture = $request->file('picture')->store('picture_apt', 'public');
+            $appartement->picture = $request->file('picture')->store('picture_apt', 'public');
         }
 
-        $item->save();
-        return redirect()->route('appartements.show', $item->id)->with('success', 'Appartement edité  avec succès !');
+        $appartement->save();
+        return redirect()->route('appartements.show', $appartement->id)->with('success', 'Appartement edité  avec succès !');
     }
 
     /**
@@ -85,11 +85,7 @@ class AppartementController extends Controller
      */
     public function destroy(Appartement $appartement)
     {
-        $filePath = storage_path('app/public/' . $appartement->picture);
-
-        if (file_exists($filePath)) {
-            unlink($filePath);
-        }
+        Storage::disk('public')->delete($appartement->picture);
 
         $appartement->delete();
         return redirect()->route('appartements.index')->with('success', 'Appartement supprimé avec succès !');
