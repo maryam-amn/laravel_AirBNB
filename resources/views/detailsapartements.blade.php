@@ -10,31 +10,57 @@
         <div class="w-full sm:w-11/12 md:w-4/5 lg:w-2/4 relative rounded-lg">
             <div class="flex flex-col gap-6 p-6 md:p-10 rounded-4xl shadow-lg border border-blue-100 bg-white">
                 <div class="flex flex-col gap-5">
+                    @if (session('success'))
+                        <div class="mb-4 p-4 bg-green-100 text-green-700 rounded text-center">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <h1 class="text-3xl md:text-4xl font-serif italic text-center">Air BNB</h1>
 
                     <img
                         class="border-2 border-gray-300 rounded-3xl h-auto w-full sm:w-3/4 mx-auto"
-                        src="{{ asset('/img-app.jpeg') }}"
-                        alt="Image logement" />
+                        src="{{ asset('storage/' . ltrim($appartement->picture, '/')) }}"
+                        alt="image-logement"
+                    >
 
                     <div class="flex flex-col gap-2 text-sm md:text-base">
                         <p><strong>Description du Logement :</strong></p>
                         <p class="text-gray-700">
-                            <span class="font-semibold text-indigo-600">City :</span> Paris
+                            <span class="font-semibold text-indigo-600">City :</span> {{$appartement->city}}
+                        </p>
+                        <p class="text-gray-700">
+                            <span
+                                class="font-semibold text-indigo-600">Price per day  :</span> {{$appartement->price_per_day}}
+                            .- /personne
                         </p>
                         <p>
-                            Découvrez ce superbe appartement de 2 pièces, idéalement situé à deux pas des principaux commerces et transports en commun.
-                            Il offre un séjour confortable avec un canapé cosy, une cuisine entièrement équipée, ainsi qu’une chambre calme avec un grand lit double.
-                            Décoration moderne, luminosité naturelle, Wifi haut débit, chauffage central et balcon complètent ce logement.
+                            {{ $appartement->description }}
                         </p>
                     </div>
 
-                    <p class="text-center">Séjourner chez <strong>@test</strong> !</p>
+                    <p class="text-center">Séjourner chez <strong>@ {{$appartement->user->name}}</strong> !</p>
 
-                    <a href="http://localhost/bookapt"
+                    <a href="http://localhost/bookapt/{{$appartement->id}}"
                        class="bg-blue-100 hover:bg-blue-300 active:scale-98 active:bg-blue-800 text-black text-center px-4 py-2 rounded-lg w-2/3 sm:w-1/3 mx-auto transition-all duration-200 ease-in-out">
                         Book an Airbnb
                     </a>
+
+                    <a href="{{ route('appartements.edit', $appartement->id) }}"
+                       class="bg-blue-100 hover:bg-blue-300 active:scale-98 active:bg-blue-800 text-black text-center px-4 py-2 rounded-lg w-2/3 sm:w-1/3 mx-auto transition-all duration-200 ease-in-out">
+                        Edit an Airbnb
+                    </a>
+
+                    <form action="{{ route('appartements.destroy', $appartement->id) }}" method="POST"
+                          class="w-2/3 sm:w-1/3 mx-auto text-center">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                                class="bg-blue-100 hover:bg-blue-300 active:scale-98 active:bg-blue-800 text-black text-center px-4 py-2 rounded-lg w-full transition-all duration-200 ease-in-out">
+                            Delete
+                        </button>
+                    </form>
+
+
                 </div>
             </div>
         </div>
