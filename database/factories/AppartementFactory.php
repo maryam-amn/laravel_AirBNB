@@ -31,7 +31,7 @@ class AppartementFactory extends Factory
             'city' => $this->faker->city(),
             'country' => $this->faker->country(),
             'description' => $this->faker->text(),
-            'picture' => 'picture_apt/kUIy23O9eErPbzarVqYTETLm5Rr9spFN9ePMZe22.jpg',
+            'picture' => 'picture_apt/image.jpg',
             'price_per_day' => $this->faker->numberBetween(1,100),
             'start_date' => $startDate,
             'end_date' => $endDate,
