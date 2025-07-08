@@ -22,7 +22,7 @@
                     @endif
                     <p class="text-xs text-gray-500">Air bnb n°{{$res->id}}</p>
                     <input name="appartement_id" class="hidden" value="{{$res->id}}">
-                    <input type="hidden" name="user_id" value="1">
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
 
                     <div class="flex flex-col gap-1.5">
                         <label for="date_reserved">Date à réservée:</label>

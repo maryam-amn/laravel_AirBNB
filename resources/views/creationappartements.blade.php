@@ -20,7 +20,7 @@
 
                 <div class="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl shadow-lg border border-black bg-white">
                     <h1 class="text-2xl sm:text-4xl font-serif italic">Propose a Air bnb</h1>
-                    <input type="hidden" name="user_id" value="1"/>
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
 
                     <div class="flex flex-col gap-1.5">
                         <label for="Rue">Rue:</label>
