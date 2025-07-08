@@ -31,16 +31,15 @@
                         <p class="text-gray-700">
                             <span
                                 class="font-semibold text-indigo-600">Price per day  :</span> {{$appartement->price_per_day}}
-                            .- /personne
+                            .- / per.
                         </p>
                         <p>
                             {{ $appartement->description }}
                         </p>
                     </div>
-
                     <p class="text-center">Séjourner chez <strong>@ {{$appartement->user->name}}</strong> !</p>
 
-                    <a href="http://localhost/bookapt/{{$appartement->id}}"
+                    <a href="{{ route('reservations.show', $appartement->id) }}"
                        class="bg-blue-100 hover:bg-blue-300 active:scale-98 active:bg-blue-800 text-black text-center px-4 py-2 rounded-lg w-2/3 sm:w-1/3 mx-auto transition-all duration-200 ease-in-out">
                         Book an Airbnb
                     </a>

@@ -86,7 +86,9 @@ class AppartementController extends Controller
     public function destroy(Appartement $appartement)
     {
         Storage::disk('public')->delete($appartement->picture);
-
+        if($appartement->reservations()->count() > 0){
+            $appartement->reservations()->delete();
+        }
         $appartement->delete();
         return redirect()->route('appartements.index')->with('success', 'Appartement supprimé avec succès !');
     }
