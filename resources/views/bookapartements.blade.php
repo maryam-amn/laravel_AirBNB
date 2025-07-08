@@ -25,7 +25,7 @@
                     <input type="hidden" name="user_id" value="1">
 
                     <div class="flex flex-col gap-1.5">
-                        <label for="date_reserved">Date réservée:</label>
+                        <label for="date_reserved">Date à réservée:</label>
                         <input type="date" name="date_reserved"
                                class="border border-neutral-300 rounded-md bg-white
                                text-gray-800 px-3 py-2 text-sm placeholder-gray-400 w-full">
